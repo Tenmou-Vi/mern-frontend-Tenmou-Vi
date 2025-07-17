@@ -1,0 +1,26 @@
+.moviesListCard {
+    width: 18rem;
+}
+
+.smallPoster {
+    height: 180px;
+    width: 100%;
+    object-fit: cover;
+    user-select: none;
+}
+
+.main-container {
+    margin-top: 20px;
+}
+
+.movieRow {
+    margin-top: 15px;
+}
+
+.card {
+    margin-top: 15px;
+}
+
+div.poster {
+    margin: 10px;
+}
