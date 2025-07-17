@@ -1,0 +1,36 @@
+runtime: nodejs20
+service: frontend
+
+handlers:
+  # Serve static files from build directory
+  - url: /static
+    static_dir: build/static
+    secure: always
+
+  # Serve favicon
+  - url: /favicon.ico
+    static_files: build/favicon.ico
+    upload: build/favicon.ico
+    secure: always
+
+  # Serve manifest.json  
+  - url: /manifest.json
+    static_files: build/manifest.json
+    upload: build/manifest.json
+    secure: always
+
+  # Serve other static assets
+  - url: /(.+)
+    static_files: build/\1
+    upload: build/(.+)
+    secure: always
+
+  # Serve index.html for all other routes (SPA support)
+  - url: /.*
+    static_files: build/index.html
+    upload: build/index.html
+    secure: always
+
+# Environment variables for React app
+env_variables:
+  REACT_APP_API_BASE_URL: "https://personal-web-page-tenmou-vi.uc.r.appspot.com"
